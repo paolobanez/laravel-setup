@@ -5,7 +5,7 @@ LABEL maintainer="paolobanez@gmail.com"
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y install \
     vim apache2 php libapache2-mod-php php-mcrypt php-curl php-cli php-common php-json php-mysql php-readline php-mbstring php-xml php-imagick php-zip curl php-intl lynx-cur php-soap poppler-utils
-RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash
 RUN apt-get -y install nodejs build-essential
 
 # Enable apache mods.
