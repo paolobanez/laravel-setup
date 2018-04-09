@@ -22,6 +22,14 @@ ENV APACHE_LOG_DIR /var/log/apache2
 ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV APACHE_PID_FILE /var/run/apache2.pid
 
+RUN mkdir /tmp/composer/ && \
+    cd /tmp/composer && \
+    curl -sS https://getcomposer.org/installer | php && \
+    mv composer.phar /usr/local/bin/composer && \
+    chmod a+x /usr/local/bin/composer && \
+    cd / && \
+    rm -rf /tmp/composer
+
 # Expose apache.
 EXPOSE 80
 
