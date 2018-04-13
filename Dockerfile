@@ -33,6 +33,9 @@ RUN mkdir /tmp/composer/ && \
 # Expose apache.
 EXPOSE 80
 
+# Suppress error on apache2
+RUN echo 'ServerName localhost' >> /etc/apache2/apache2.conf
+
 # Update the default apache site with the config we created.
 ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 
