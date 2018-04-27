@@ -39,5 +39,12 @@ RUN echo 'ServerName localhost' >> /etc/apache2/apache2.conf
 # Update the default apache site with the config we created.
 ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
 
+# set permission
+ENV SITE_PATH /var/www/site
+RUN chmod a+x ${SITE_PATH}
+RUN chown -R www-data:www-data ${SITE_PATH}
+RUN chmod -R 775 ${SITE_PATH}
+RUN adduser $USER www-data
+
 # By default start up apache in the foreground
 CMD /usr/sbin/apache2ctl -D FOREGROUND
