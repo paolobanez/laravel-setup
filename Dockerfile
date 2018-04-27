@@ -45,7 +45,7 @@ RUN mkdir ${SITE_PATH}
 RUN chmod a+x ${SITE_PATH}
 RUN chown -R www-data:www-data ${SITE_PATH}
 RUN chmod -R 775 ${SITE_PATH}
-RUN adduser $USER www-data
+RUN adduser root www-data
 
 # By default start up apache in the foreground
 CMD /usr/sbin/apache2ctl -D FOREGROUND
