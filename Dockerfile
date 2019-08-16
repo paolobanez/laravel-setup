@@ -46,6 +46,7 @@ RUN docker-php-ext-install \
     pdo_mysql \
     pdo_pgsql \
     pdo_sqlite \
+    pgsql \
     pcntl \
     tokenizer \
     xml \
