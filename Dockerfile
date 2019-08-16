@@ -8,8 +8,7 @@ RUN apk add --no-cache --virtual .build-deps \
     libtool \
     libxml2-dev \
     postgresql-dev \
-    sqlite-dev \
-    libpq-dev
+    sqlite-dev
 
 # Install production dependencies
 RUN apk add --no-cache \
@@ -29,6 +28,7 @@ RUN apk add --no-cache \
     openssh-client \
     rsync \
     zlib-dev \
+    libpq \
     libzip-dev
 
 # Install PECL and PEAR extensions
