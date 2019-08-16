@@ -8,7 +8,8 @@ RUN apk add --no-cache --virtual .build-deps \
     libtool \
     libxml2-dev \
     postgresql-dev \
-    sqlite-dev
+    sqlite-dev \
+    libpq-dev
 
 # Install production dependencies
 RUN apk add --no-cache \
@@ -46,7 +47,6 @@ RUN docker-php-ext-install \
     pdo_mysql \
     pdo_pgsql \
     pdo_sqlite \
-    pgsql \
     pcntl \
     tokenizer \
     xml \
